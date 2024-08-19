@@ -1,0 +1,12 @@
+---
+- name: Obtener el hostname de la máquina
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Obtener el hostname
+      command: hostname
+      register: hostname_result
+
+    - name: Mostrar el hostname
+      debug:
+        msg: "El hostname de esta máquina es: {{ hostname_result.stdout }}"
