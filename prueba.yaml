@@ -4,7 +4,7 @@
   gather_facts: no
   tasks:
     - name: Obtener el hostname
-      command: hostname
+      command: hostnamectl hostname
       register: hostname_result
 
     - name: Mostrar el hostname
